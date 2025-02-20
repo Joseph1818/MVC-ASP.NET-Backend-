@@ -1,0 +1,30 @@
+﻿@model List<MyApp.Models.Item>
+
+
+@{
+    // title of our tab
+    ViewData["title"] = "Index";
+}
+
+<h3>Index</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    //Here we are looping inside the Database Model 
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>@item.Name </tr>
+            <tr>@item.Price.ToString("N2")</tr>
+            <tr>
+
+            </tr>
+        }
+        
+    </tbody>
+</table>
