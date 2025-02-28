@@ -26,6 +26,7 @@ app.UseAuthorization();// Which allow users authorizations
 
 app.MapStaticAssets();// Enables files like images css, Js etc
 
+
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}")

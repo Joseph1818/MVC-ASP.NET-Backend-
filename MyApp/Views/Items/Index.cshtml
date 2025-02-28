@@ -1,11 +1,9 @@
 ﻿@model List<MyApp.Models.Item>
 
-
 @{
-    // title of our tab
+   
     ViewData["title"] = "Index";
 }
-
 <h3>Index</h3>
 
 <table class="table">
@@ -15,16 +13,21 @@
             <th>Price</th>
         </tr>
     </thead>
-    //Here we are looping inside the Database Model 
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>@item.Name </tr>
-            <tr>@item.Price.ToString("N2")</tr>
             <tr>
-
-            </tr>
+                <!-- Added <tr> to wrap each row -->
+                <td>@item.Name</td>
+                <td>@item.Price.ToString("N2") $</td>
+                <!-- You can uncomment these for edit and delete actions -->
+                 <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td> 
+            </tr> <!-- End of the <tr> -->
         }
-        
     </tbody>
 </table>
+
+
